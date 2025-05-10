@@ -10,11 +10,11 @@ import (
 var DBConnection *sql.DB
 
 func Initiator() {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		viper.GetString("migration.db.postgres.db_host"),
-		viper.GetInt("migration.db.postgres.db_port"),
+	psqlInfo := fmt.Sprintf("postgresql://%s:%s@%s:%d/%s",
 		viper.GetString("migration.db.postgres.db_user"),
 		viper.GetString("migration.db.postgres.db_password"),
+		viper.GetString("migration.db.postgres.db_host"),
+		viper.GetInt("migration.db.postgres.db_port"),
 		viper.GetString("migration.db.postgres.db_name"),
 	)
 

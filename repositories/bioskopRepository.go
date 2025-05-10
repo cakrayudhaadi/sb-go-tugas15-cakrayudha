@@ -8,7 +8,7 @@ import (
 
 func GetAllBioskop(db *sql.DB) (bioskops []structs.Bioskop, err error) {
 	sqlStatement := `
-	SELECT * FROM tugas_13.bioskop
+	SELECT * FROM bioskop
 	`
 
 	res, err := db.Query(sqlStatement)
@@ -33,7 +33,7 @@ func GetAllBioskop(db *sql.DB) (bioskops []structs.Bioskop, err error) {
 
 func GetBioskop(db *sql.DB, id int) (bioskop structs.Bioskop, err error) {
 	sqlStatement := `
-	SELECT * FROM tugas_13.bioskop
+	SELECT * FROM bioskop
 	WHERE id = $1
 	`
 
@@ -56,7 +56,7 @@ func GetBioskop(db *sql.DB, id int) (bioskop structs.Bioskop, err error) {
 
 func CreateBioskop(db *sql.DB, bioskop structs.Bioskop) error {
 	sqlStatement := `
-	INSERT INTO tugas_13.bioskop(nama, lokasi, rating)
+	INSERT INTO bioskop(nama, lokasi, rating)
 	VALUES ($1, $2, $3)
 	`
 
@@ -66,7 +66,7 @@ func CreateBioskop(db *sql.DB, bioskop structs.Bioskop) error {
 
 func UpdateBioskop(db *sql.DB, bioskop structs.Bioskop) error {
 	sqlStatement := `
-	UPDATE tugas_13.bioskop
+	UPDATE bioskop
 	SET nama = $2, lokasi = $3, rating = $4
 	WHERE id = $1
 	`
@@ -77,7 +77,7 @@ func UpdateBioskop(db *sql.DB, bioskop structs.Bioskop) error {
 
 func DeleteBioskop(db *sql.DB, id int) error {
 	sqlStatement := `
-	DELETE FROM tugas_13.bioskop
+	DELETE FROM bioskop
 	WHERE id = $1
 	`
 

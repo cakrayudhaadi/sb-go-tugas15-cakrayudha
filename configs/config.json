@@ -8,11 +8,12 @@
     "migration": {
       "db": {
         "postgres": {
-          "db_host": "localhost",
-          "db_port": "5432",
-          "db_name": "sanbercode_golang",
+          "db_url": "postgresql://%s:%s@%s:%d/%s",
+          "db_host": "yamabiko.proxy.rlwy.net",
+          "db_port": "14702",
           "db_user": "postgres",
-          "db_password": "postgres",
+          "db_password": "UOxtfjslPAprHRxSVIcFoCUVxhzitYuM",
+          "db_name": "railway",
           "db_engine": "postgres"
         }
       }
